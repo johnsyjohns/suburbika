@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>suburbika</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- https://www.w3schools.com/jsref/prop_style_animationname.asp -->
+<style>
+
+* {cursor: url('icons/cursor.cur'), default;}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 15;
+  }
+
+  75% {
+    opacity:85;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#Title {
+  font-family: brush script MT;
+  font-size: 75px;
+  color: black;
+  left: 20%;
+  top: 55%;
+  position: absolute;
+  opacity: 0;
+  color: black;
+  animation-name: fadeIn;
+  animation-delay: 0.5s;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+#Logline {
+  font-family: brush script MT;
+  font-size: 50px;
+  color: black;
+  left: 55%;
+  top: 80%;
+  position: absolute;
+  opacity: 0;
+  color: black;
+  animation-name: fadeIn;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+#bk {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10%;
+}
+
+
+</style>
+
+<body onclick="myFunction()">
+
+  <script>
+  function myFunction() {
+    window.open("warning/index.html");
+  }
+  </script>
+
+<div><img src="img/bkimg.png" alt="Neighborhood Entrance" id="bk"></div>
+
+<div id="Title">
+
+<p><h1>Suburbika</h1></p>
+
+</div>
+
+<div id="Logline"><p>Selected Settler-Colonial Aesthetics</p></div>
+
+</body>
+
+</html>

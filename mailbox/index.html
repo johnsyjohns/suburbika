@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>suburbika</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <!-- https://www.w3schools.com/jsref/prop_style_animationname.asp -->
+<style>
+
+* {cursor: url('icons/cursor.cur'), default;}
+
+button {
+  width:300px;
+  height:300px;
+  opacity: 0.2;
+  position: absolute;
+  border: none;
+  background-image: url('icons/audio.png');
+  outline: none;
+  z-index: 100;
+  left: 3vw;
+}
+
+button:hover {
+  opacity: 1;
+  border:none;
+  outline: none;
+}
+
+button:active {
+  opacity: 0;
+  border:none;
+  outline: none;
+}
+
+#ground_container {
+  position:absolute;
+}
+
+#mailbox1_container {
+  position:absolute;
+}
+
+#mailbox1_container {
+  position:absolute;
+}
+
+#mailbox2_container {
+  position:absolute;
+
+}
+
+#mailbox3_container {
+  position:absolute;
+}
+
+
+#map {
+  left: 45vw;
+  top: 82vh;
+  position: absolute;
+  z-index: 100;
+  opacity:0.7;
+}
+
+#arrow {
+  left: 55vw;
+  top: 82vh;
+  position: absolute;
+  z-index: 100;
+  opacity:0.7;
+}
+
+#and {
+  left: 35vw;
+  top: 82vh;
+  position: absolute;
+  z-index: 100;
+  opacity:0.7;
+}
+
+
+.bk {
+  width: 100vw;
+  height: auto;
+  margin-top: -15%;
+  z-index: -50;
+}
+
+.mailbox1 {
+  padding-left: 1200px;
+  width: 25vw;
+  height: 90vh;
+  padding-top: 75px;
+}
+
+.mailbox1:hover{
+  opacity: 0.7;
+}
+
+.mailbox2 {
+  width: 15vw;
+  height: 55vh;
+  padding-top:5vh;
+  padding-left: 30vw;
+  opacity: 0.85;
+}
+
+.mailbox3 {
+  width: 10vw;
+  height: 35vh;
+  padding-top: 7vh;
+  padding-left:48vw;
+  opacity: 0.75;
+}
+
+
+#safest {
+  position: fixed;
+  opacity: 0;
+  background-color: rgba(0,0,0,0);
+  top: -40%;
+  left: -5%;
+  width: 50%;
+  height: 150vh;
+}
+
+  #overlay1 {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 25%; /* Full width (cover the whole page) */
+  height: 75%; /* Full height (cover the whole page) */
+  top: 15%;
+  left: 600px;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0); /* Black background with opacity */
+  z-index: 50; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay2 {
+position: fixed; /* Sit on top of the page content */
+display: none; /* Hidden by default */
+width: 25%; /* Full width (cover the whole page) */
+height: 75%; /* Full height (cover the whole page) */
+top: 15%;
+left: 650px;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0); /* Black background with opacity */
+z-index: 40; /* Specify a stack order in case you're using a different order for other elements */
+cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay3 {
+position: fixed; /* Sit on top of the page content */
+display: none; /* Hidden by default */
+width: 25%; /* Full width (cover the whole page) */
+height: 75%; /* Full height (cover the whole page) */
+top: 15%;
+left: 700px;
+right: 0;
+bottom: 0;
+background-color: rgba(0,0,0,0); /* Black background with opacity */
+z-index: 30; /* Specify a stack order in case you're using a different order for other elements */
+cursor: pointer; /* Add a pointer on hover */
+}
+
+/*onmouseover="playSound('open')" onmouseout="stopSound('open')"
+audio id='open' src="audio/open.mp3"></audio>
+  </div>*/
+
+
+
+</style>
+
+</head>
+<body>
+
+  <div><audio id="player" src="audio/audio.mp3"></audio>
+<button onclick="document.getElementById('player').play()"></button>
+
+<div id="ground_container">
+  <img src="img/mailbox_ground.png" class="bk" alt="mailbox-lined street">
+</div>
+
+<div id="mailbox1_container">
+  <img src="img/mailbox1.png" class="mailbox1" alt="mailbox" onclick="on1(); on2(); on3()">
+</div>
+
+<div id="mailbox2_container">
+  <img src="img/mailbox2.png" class="mailbox2" alt="mailbox">
+</div>
+
+<div id="mailbox3_container">
+  <img src="img/mailbox3.png" class="mailbox3" alt="mailbox">
+</div>
+
+<div><img src="img/one.png" id="overlay1" class="draggable1"></div> <!--I think I'm supposed to declare id for js function here? -->
+<div><img src="img/two.png" id="overlay2" class="draggable2"></div>
+<div><img src="img/three.png" id="overlay3" class="draggable3"></div>
+
+<a target="_blank" rel="noopener noreferrer" href="https://www.safewise.com/blog/safest-cities-kentucky/">
+  <img id="and" border="0" alt="more" src="icons/more.png" width="100" height="100">
+</a>
+
+<a target="_blank" rel="noopener noreferrer" href="https://johnsyjohns.github.io/suburbika/sources">
+<img id="map" border="0" alt="map" src="icons/button.png" width="100" height="100" onclick="lessFunction()">
+</a></p>
+
+<p><a href="https://johnsyjohns.github.io/suburbika/pond">
+<img id="arrow" border="0" alt="next" src="icons/arrow.png" width="100" height="100">
+</a>
+</p>
+
+<script>
+
+function on1() {
+  document.getElementById("overlay1").style.display = "block";
+}
+
+function off1() {
+  document.getElementById("overlay1").style.display = "none";
+}
+
+function on2() {
+  document.getElementById("overlay2").style.display = "block";
+}
+
+function off2() {
+  document.getElementById("overlay2").style.display = "none";
+}
+
+function on3() {
+  document.getElementById("overlay3").style.display = "block";
+}
+
+function off3() {
+  document.getElementById("overlay3").style.display = "none";
+}
+
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+$( ".draggable1" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable2" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable3" ).draggable();
+} );
+</script>
+
+
+
+</body>
+</html>
