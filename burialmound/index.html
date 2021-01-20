@@ -1,0 +1,110 @@
+<html>
+  <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!--  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.0/p5.js"></script> -->
+    <script src="test.js"></script>
+    <style>
+
+        * {cursor: url('icon/cursor.cur'), default;}
+
+    * {
+            box-sizing: border-box;
+          }
+
+          body {
+            /*background-image: url("background.jpg");*/
+            /* Full height */
+            background-image:url("img/bk.png");
+            height: 100%;
+            width: 100%;
+            /* Center and scale the image nicely */
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: -10;
+          }
+
+          button {
+            position: absolute;
+            width:300px;
+            height:300px;
+            opacity: 0.2;
+            top:0px;
+            left:0px;
+            border: none;
+            background-image: url('icons/audio.png');
+            background-color: rgba(0,0,0,0);
+            z-index:100;
+            outline: none;
+          }
+
+          button:hover {
+            opacity: 1;
+            border:none;
+            outline: none;
+          }
+
+          button:active {
+            opacity: 0;
+            border:none;
+            outline: none;
+          }
+
+          #map {
+            left: 45vw;
+            top: 82vh;
+            position: absolute;
+            z-index: 100;
+            opacity:0.7;
+          }
+
+          #arrow {
+            left: 55vw;
+            top: 82vh;
+            position: absolute;
+            z-index: 100;
+            opacity:0.7;
+          }
+
+          #and {
+            left: 35vw;
+            top: 82vh;
+            position: absolute;
+            z-index: 100;
+            opacity:0.7;
+          }
+
+          #hunting {
+            position: fixed;
+            opacity: 0;
+            background-color: rgba(0,0,0,0);
+            top: 32vh;
+            left: 10vw;
+            width: 65vw;
+            height: 33vh;
+          }
+
+      </style>
+  </head>
+  <body>
+
+    <div><audio id="player" src="audio/audio.mp3"></audio>
+    <button onclick="document.getElementById('player').play()"></button>
+
+    <a target="_blank" rel="noopener noreferrer" href="http://www.thepeopleofthehuntingground.com/">
+      <img id="and" border="0" alt="more" src="icons/more.png" width="100" height="100">
+    </a>
+
+    <a target="_blank" rel="noopener noreferrer" href="https://johnsyjohns.github.io/suburbika/sources">
+    <img id="map" border="0" alt="map" src="icons/button.png" width="100" height="100" onclick="lessFunction()">
+    </a></p>
+
+    <p><a href="https://johnsyjohns.github.io/suburbika/fin">
+    <img id="arrow" border="0" alt="next" src="icons/arrow.png" width="100" height="100">
+    </a>
+    </p>
+
+
+  </body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>suburbika</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+  <!-- https://www.w3schools.com/jsref/prop_style_animationname.asp -->
+<style>
+
+* {cursor: url('icons/cursor.cur'), default;}
+
+
+button {
+  position: absolute;
+  width:300px;
+  height:300px;
+  opacity: 0.2;
+  top:0px;
+  left:0px;
+  border: none;
+  background-image: url('icons/audio.png');
+  background-color: rgba(0,0,0,0);
+  z-index:100;
+  outline: none;
+}
+
+button:hover {
+  opacity: 1;
+  border:none;
+  outline: none;
+}
+
+button:active {
+  opacity: 0;
+  border:none;
+  outline: none;
+}
+
+#bk {
+  position:absolute;
+  margin-top: -5vh;
+  margin-left: -5vw;
+}
+
+#video {
+  width: 40vw;
+  height: 40vh;
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 40vw;
+  z-index: 10;
+
+}
+
+#frame {
+  position: absolute;
+  margin-top: 0px;
+  margin-left: 35vw;
+  z-index: 100;
+}
+
+#compass {
+  position: absolute;
+  margin-top: 20vh;
+  margin-left: 50vw;
+  z-index: 50;
+  transition: transform 1s;
+}
+
+#compass:hover {
+  transform: rotate(1080deg);
+}
+
+</style>
+
+</head>
+
+<body>
+
+  <div><audio id="player" src="audio/audio.mp3"></audio>
+  <button onclick="document.getElementById('player').play()"></button>
+
+  <div id="bk"><img src="img/bk.png" alt="Cul-de-sac" width="1920" height="1080"></div>
+
+  <p><a href="https://johnsyjohns.github.io/suburbika/sources">
+  <img id="compass" src="icons/compass.png" alt="Sources" width="100" height="100"></a></p>
+
+  <div id="frame"><img src="img/frame.png" alt="House" width="890" height="380"></div>
+
+  <video autoplay controls muted id="video">
+    <source src="vid/video.mp4" type="video/mp4">
+  </video>
+
+</body>
+
+</html>
