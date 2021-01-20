@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>surburbika</title>
+    <meta name="viewport" content="width=device-width">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+    <noscript>
+      <style type="text/css">
+        #main {display:none;}
+      </style>
+      <div class="noscriptmsg">
+        This page requires JavaScript to be enabled.
+      </div>
+    </noscript>
+
+    <style>
+
+    * {cursor: url('icons/cursor.cur'), default;}
+
+
+    button {
+      width:300px;
+      height:300px;
+      opacity: 0.2;
+      position: absolute;
+      border: none;
+      background-image: url('icons/audio.png');
+      background-color: rgb(0,0,0,0);
+      outline: none;
+    }
+
+    button:hover {
+      opacity: 1;
+      border:none;
+      outline: none;
+    }
+
+    button:active {
+      opacity: 0;
+      border:none;
+      outline: none;
+    }
+
+
+	  body { font-family:brush script MT; }
+	  #main { width: 980px; }
+	  #reservation { width: 25vw; position:fixed; margin-left: 70vw; margin-top: 5vh; font-family: brush script MT; font-size:1.3em;}
+	  li { line-height: 1.3em; font-family: brush script MT; font-size: 1.3em;}
+	  #writeRes { width: 20vw; position: fixed; margin-left: 60vw; margin-top: 9vh;}
+
+	  /* With the @keyframes rule, you can create animations.
+	  http://www.w3schools.com/cssref/css3_pr_animation-keyframes.asp */
+	  @keyframes fade-in  {
+		  0% {
+			  opacity: 0;
+			  }
+		  100% {
+			  opacity: 1;
+			  }
+		}
+
+	  .fade-in {
+		  animation-name: fade-in;
+		  animation-duration: 3s;
+		  animation-timing-function: ease-in;
+		  animation-iteration-count: 1;
+		}
+
+    #bkimg {
+      width: 100vw;
+      height: auto;
+      position:absolute;
+      top: -18vh;
+      z-index: -30;
+    }
+
+    input {
+      width: 15vw;
+      height: 5vh;
+      border: none;
+      opacity: 1;
+      font-size: 1em;
+      font-family: brush script MT;
+      color:black;
+      background-color: white;
+      z-index: 0;
+    }
+
+    ::placeholder {
+      font-size: 1em;
+      color: black;
+      z-index: 20;
+    }
+
+    input[type=button] {
+      background-image: url('img/reserve.png');
+      opacity:0.4;
+      font-size: 1em;
+      color: black;
+      margin-left: 10vw;
+      margin-top: 5vh;
+    }
+
+    input[type=reset] {
+      background-image: url('img/reset.png');
+      opacity:0.4;
+      font-size: 1em;
+      color:black;
+      margin-left: 80px;
+    }
+
+    #map {
+      left: 45vw;
+      top: 82vh;
+      position: absolute;
+      z-index: 100;
+      opacity:0.7;
+    }
+
+    #arrow {
+      left: 55vw;
+      top: 82vh;
+      position: absolute;
+      z-index: 100;
+      opacity:0.7;
+    }
+
+    #and {
+      left: 35vw;
+      top: 82vh;
+      position: absolute;
+      z-index: 100;
+      opacity:0.7;
+    }
+
+    #security {
+      position: absolute;
+      opacity: 0;
+      background-color: rgba(0,0,0,0);
+      top: 7%;
+      left: 75%;
+      width: 20vw;
+      height: 70vh;
+    }
+
+
+	</style>
+
+    <script>
+	  //create a function to assemble the story
+      function makeRes() {
+		  story = "<h2 class='fade-in'>Reservation Denied</h2><p class='fade-in'> " +
+		  " we're sorry " +
+      document.reserve.input2.value  + "," +
+		  " the court is not available at "+
+      document.reserve.input1.value + "</p>" ;
+		  //write the story to a div in the page
+		  document.getElementById("writeRes").innerHTML=story;
+      document.getElementById("reservation").style.display="none";
+		}
+    </script>
+
+  </head>
+
+  <body>
+    <div id="main">
+      <form name="reserve" id="reservation">
+        <fieldset> <!--Used to logically group sections of a form-->
+
+          <legend><strong>Tennis Court Res-er-va-tion:</strong></legend> <!--Used to add captions to a fieldset-->
+          <ol>
+            <li>
+            <label for="time">Time:<em>*</em><br>
+              <input type="time" id="ResTime" name="input1" min="9:00" max="18:00" required>
+            </label>
+            </li>
+            <br>
+          <li>
+          <label for="name">Name:<em>*</em><br>
+            <input type="text" name="input2" size="30" required /></label>
+          </li>
+          <br>
+          <li>
+          <label for="address">Your location, land acknowledgment:<em>*</em><br>
+            <input type="text" name="input3" size="30" required /></label>
+          </li>
+        </ol>
+        </fieldset>
+
+        <p>
+        <!-- This button runs the function that compiles the story -->
+        <input type="button" value="Make Reservation" onClick ="makeRes()">
+        <input type="reset">
+      </p>
+    </form>
+
+      <div id="writeRes"></div>
+    </div>
+
+    <div id="bkimg">
+      <img src="img/courts.png" alt="tennis court">
+    </div>
+
+
+        <div><audio id="player" src="audio/audio.mp3"></audio>
+      <button onclick="document.getElementById('player').play()"></button>
+
+      <a target="_blank" rel="noopener noreferrer" href="https://prospectky.us/residents/local-amenities/">
+        <img id="and" border="0" alt="more" src="icons/more.png" width="100" height="100">
+      </a>
+
+      <a target="_blank" rel="noopener noreferrer" href="https://johnsyjohns.github.io/suburbika/sources">
+      <img id="map" border="0" alt="map" src="icons/button.png" width="100" height="100" onclick="lessFunction()">
+      </a></p>
+
+    <p><a href="https://johnsyjohns.github.io/suburbika/streetsigns">
+    <img id="arrow" border="0" alt="next" src="icons/arrow.png" width="100" height="100">
+    </a>
+    </p>
+
+
+  </body>
+</html>

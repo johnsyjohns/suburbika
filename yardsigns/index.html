@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>suburbika</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <!-- https://www.w3schools.com/jsref/prop_style_animationname.asp -->
+<style>
+
+* {cursor: url('icons/cursor.cur'), default;}
+
+button {
+  width:300px;
+  height:300px;
+  opacity: 0.2;
+  position: absolute;
+  border: none;
+  background-image: url('icons/audio.png');
+  background-color: rgba(0,0,0,0);
+  outline: none;
+  z-index: 100;
+  left: 3vw;
+}
+
+button:hover {
+  opacity: 1;
+  border:none;
+  outline: none;
+}
+
+button:active {
+  opacity: 0;
+  border:none;
+  outline: none;
+}
+
+#bk {
+  width: 50vw;
+  height: auto;
+  top: -5vh;
+  position: fixed;
+  z-index: -50;
+}
+
+#map {
+  left: 45vw;
+  top: 86vh;
+  position: fixed;
+  z-index: 100;
+  opacity:0.7;
+}
+
+#arrow {
+  left: 55vw;
+  top: 87vh;
+  position: fixed;
+  z-index: 100;
+  opacity:0.7;
+}
+
+#and {
+  left: 35vw;
+  top: 86vh;
+  position: fixed;
+  z-index: 100;
+  opacity:0.7;
+}
+
+#overlay1 {
+  left: -5vw;
+  top: 0vh;
+    display: none;
+  position: fixed;
+  z-index: 80;
+}
+
+#overlay2 {
+  left: -20vw;
+  top: 10vh;
+  display: none;
+  position: fixed;
+  z-index: 90;
+}
+
+#overlay3 {
+  left: 50vw;
+  top: -1vh;
+    display: none;
+  position: fixed;
+  z-index: 100;
+}
+
+#overlay4 {
+  left: 12vw;
+  top: 20vh;
+    display: none;
+  position: fixed;
+  z-index: 60;
+}
+
+#overlay5 {
+  left: 40vw;
+  top: 30vh;
+    display: none;
+  position: fixed;
+  z-index: 50;
+}
+
+#overlay6 {
+  left: 30vw;
+  top: 20vh;
+    display: none;
+  position: fixed;
+  z-index: 40;
+}
+
+#overlay7 {
+  left: -40vw;
+  top: -15vh;
+    display: none;
+  position: fixed;
+  z-index: 30;
+}
+
+#overlay8 {
+  left: 8vw;
+  top: -15vh;
+    display: none;
+  position: fixed;
+  z-index: 20;
+}
+
+#overlay9 {
+  left: 60vw;
+  top: 20vh;
+    display: none;
+  position: fixed;
+  z-index: 10;
+}
+
+#overlay10 {
+  left: 50vw;
+  top: 15vh;
+    display: none;
+  position: fixed;
+  z-index: 5;
+}
+
+
+</style>
+
+</head>
+<body>
+
+  <div><audio id="player" src="audio/audio.mp3"></audio>
+<button onclick="document.getElementById('player').play()"></button>
+
+<div id="bk">
+  <img src="img/bk.png" alt="con-grad-ulations yard signs" onclick="on1(); on2(); on3(); on4(); on5(); on6(); on7(); on8(); on9(); on10();">
+</div>
+
+<div><img src="img/one.png" id="overlay1" class="draggable1"></div> <!--I think I'm supposed to declare id for js function here? -->
+<div><img src="img/two.png" id="overlay2" class="draggable2"></div>
+<div><img src="img/three.png" id="overlay3" class="draggable3"></div>
+<div><img src="img/four.png" id="overlay4" class="draggable4"></div> <!--I think I'm supposed to declare id for js function here? -->
+<div><img src="img/five.png" id="overlay5" class="draggable5"></div>
+<div><img src="img/six.png" id="overlay6" class="draggable6"></div>
+<div><img src="img/seven.png" id="overlay7" class="draggable7"></div> <!--I think I'm supposed to declare id for js function here? -->
+<div><img src="img/eight.png" id="overlay8" class="draggable8"></div>
+<div><img src="img/nine.png" id="overlay9" class="draggable9"></div>
+<div><img src="img/ten.png" id="overlay10" class="draggable10" onclick="off1(); off2(); off3(); off4(); off5(); off6(); off7(); off8(); off9(); off10(); off11(); off11()"></div> <!--I think I'm supposed to declare id for js function here? -->
+
+<a target="_blank" rel="noopener noreferrer" href="https://actionnetwork.org/fundraising/louisville-community-bail-fund/">
+  <img id="and" border="0" alt="more" src="icons/more.png" width="100" height="100">
+</a>
+
+<a target="_blank" rel="noopener noreferrer" href="https://johnsyjohns.github.io/suburbika/sources">
+<img id="map" border="0" alt="map" src="icons/button.png" width="100" height="100" onclick="lessFunction()">
+</a></p>
+
+<p><a href="https://johnsyjohns.github.io/suburbika/yard">
+<img id="arrow" border="0" alt="next" src="icons/arrow.png" width="100" height="100">
+</a>
+</p>
+
+<script>
+
+function on1() {
+  document.getElementById("overlay1").style.display = "block";
+}
+
+function off1() {
+  document.getElementById("overlay1").style.display = "none";
+}
+
+function on2() {
+  document.getElementById("overlay2").style.display = "block";
+}
+
+function off2() {
+  document.getElementById("overlay2").style.display = "none";
+}
+
+function on3() {
+  document.getElementById("overlay3").style.display = "block";
+}
+
+function off3() {
+  document.getElementById("overlay3").style.display = "none";
+}
+
+function on4() {
+  document.getElementById("overlay4").style.display = "block";
+}
+
+function off4() {
+  document.getElementById("overlay4").style.display = "none";
+}
+
+function on5() {
+  document.getElementById("overlay5").style.display = "block";
+}
+
+function off5() {
+  document.getElementById("overlay5").style.display = "none";
+}
+
+function on6() {
+  document.getElementById("overlay6").style.display = "block";
+}
+
+function off6() {
+  document.getElementById("overlay6").style.display = "none";
+}
+
+function on7() {
+  document.getElementById("overlay7").style.display = "block";
+}
+
+function off7() {
+  document.getElementById("overlay7").style.display = "none";
+}
+
+function on8() {
+  document.getElementById("overlay8").style.display = "block";
+}
+
+function off8() {
+  document.getElementById("overlay8").style.display = "none";
+}
+
+function on9() {
+  document.getElementById("overlay9").style.display = "block";
+}
+
+function off9() {
+  document.getElementById("overlay9").style.display = "none";
+}
+
+function on10() {
+  document.getElementById("overlay10").style.display = "block";
+}
+
+function off10() {
+  document.getElementById("overlay10").style.display = "none";
+}
+
+</script>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+$( function() {
+$( ".draggable1" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable2" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable3" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable4" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable5" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable6" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable7" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable8" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable9" ).draggable();
+} );
+</script>
+
+<script>
+$( function() {
+$( ".draggable10" ).draggable();
+} );
+</script>
+
+</body>
+</html>

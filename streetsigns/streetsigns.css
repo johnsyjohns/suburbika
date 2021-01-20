@@ -1,0 +1,213 @@
+* {box-sizing: border-box;}
+
+html {height: 100%; scroll-behavior: smooth;}
+body {
+  font-family: serif;
+  position: relative;
+  margin: 0;
+  padding-bottom: 6em;
+  min-height: 100%;
+  line-height: 1.5em;
+}
+
+/* Navbar container */
+.navbar1 {
+  overflow: hidden;
+  background-color: #333;
+  font-family: brush script MT;
+  font-size: 20px;
+  width: 35%;
+  height: 3em;
+  margin-left: 20vw;
+  margin-top: 20vh;
+  border: 3.5px solid rgb(212,175,55);
+  z-index: -20;
+  padding-left: 15vw;
+}
+
+/* Links inside the navbar */
+.navbar1 a {
+  font-size: 40px;
+  color: rgb(212,175,55);
+  padding-left: 150px;
+  text-align: center;
+  font-family: brush script MT;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown1 {
+  float: left;
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Dropdown button */
+.dropdown1 .dropbtn1 {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: brush script MT; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar1 a:hover, .dropdown1:hover .dropbtn1 {
+  color: rgb(212,175,55);
+  background-color: #333;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content1 {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0);
+  min-width: 39%;
+  margin-top: 1.5vh;
+  margin-left: -20vw;
+  margin-right: 5vw;
+  /*
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  */
+  z-index: -20;
+}
+
+/* Links inside the dropdown */
+.dropdown-content1 a {
+  position: relative;
+  font-size: 20px;
+  color: rgb(212,175,55);
+  padding-left: 0px;
+  padding-right: 55px;
+  padding-top: 16px;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+}
+
+/* Add a grey background color to dropdown links on hover */
+/*
+.dropdown-content1 a:hover {
+  background-color: #ddd;
+}
+*/
+/* Show the dropdown menu on hover */
+
+.dropdown1:hover .dropdown-content1 {
+  display: block;
+  width: 20%;
+}
+
+/* Navbar container */
+.navbar2 {
+  overflow: hidden;
+  background-color: #333;
+  font-family: brush script MT;
+  font-size: 20px;
+  width: 40%;
+  height: 3em;
+  margin-left: 56%;
+  margin-top: -3.25%;
+  padding-left: 250px;
+  border: 3.5px solid rgb(212,175,55);
+  z-index: -20;
+}
+
+/* Links inside the navbar */
+.navbar2 a {
+  font-size: 16px;
+  font-family:brush script MT;
+  padding-left: 150px;
+  color: rgb(212,175,55);
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown2 {
+  float: left;
+  overflow: hidden;
+  z-index: 20;
+}
+
+/* Dropdown button */
+.dropdown2 .dropbtn2 {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar2 a:hover, .dropdown2:hover .dropbtn2 {
+  color: rgb(212,175,55);
+  background-color: #333;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content2 {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0);
+  min-width: 39%;
+  margin-top: 1vh;
+  margin-left: -10vw;
+  padding-left: 0px;
+  /*
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  */
+  z-index: -20;
+}
+
+/* Links inside the dropdown */
+.dropdown-content2 a {
+  position: relative;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-left: 150px;
+  color: rgb(212,175,55);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Add a grey background color to dropdown links on hover */
+/*
+.dropdown-content1 a:hover {
+  background-color: #ddd;
+}
+*/
+/* Show the dropdown menu on hover */
+
+.dropdown2:hover .dropdown-content2 {
+  display: block;
+  width: 20%;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+  position: absolute;
+  right: 20px;
+  bottom: 10px;
+  padding: 8px 16px;
+}
+
+a:hover {
+  background-color: gray;
+  color: white;
+}
+
+#Todd {
+  color: red;
+}
+
+#Major {
+  color: blue;
+}
